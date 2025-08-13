@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caesar Cipher Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Caesar-Cipher Encryption & Decryption Tool</h1>
+        <div class="form-container">
+            <form method="POST">
+                <label>Enter Text:</label>
+                <textarea name="text" placeholder="Type your text here..."></textarea>
+
+                <label>Enter Key:</label>
+                <input type="number" name="key" placeholder="Enter shift key" required>
+
+                <label>Select Mode:</label>
+                <select name="mode">
+                    <option value="encrypt">Encrypt</option>
+                    <option value="decrypt">Decrypt</option>
+                </select>
+
+                <button type="submit">Process</button>
+            </form>
+
+            <div class="result">
+                <h2>Result:</h2>
+                <p>{{ result if result else 'Result will appear here...' }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
